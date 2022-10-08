@@ -1,0 +1,8 @@
+body {
+    direction: rtl !important;
+    text-align: right !important;
+}
+.navbar-nav {
+    margin-left: initial !important;
+    margin-right: auto;
+  }
