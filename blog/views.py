@@ -13,6 +13,10 @@ class ArticleList(ListView):
     queryset = Category.objects.all()
     paginate_by = 4
     context_object_name = "category"
+    template_name = "home.html"
+    
+class Home(ListView):
+    queryset = Category.objects.all()
     template_name = "blog.html"
 
 class Login(ListView):

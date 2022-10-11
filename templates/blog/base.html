@@ -168,7 +168,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">{% block title%}عنوان صفحه{% endblock %}</h1>
+            <h1 class="m-0 text-dark">{% block title%} کاربر {{user.username}}  خوش امدید{% endblock %}</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -187,20 +187,20 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>User</th>
-              <th>Date</th>
-              <th>Status</th>
-              <th>Reason</th>
+              <th>کاربر</th>
+              <th>وضعیت انتشار</th>
+              <th>تاریخ ایجاد</th>
+              <th>توضیحات</th>
             </tr>
           </thead>
           <tbody>
               {% for post in object_list %}
                 <tr>
-                  <td>{{post.username}}</td>
-                  <td>{{post.password}}</td>
-                 <td><span class="tag tag-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td>{{post.user}}</td>
+                  <td>{{post.status}}</td>
+                  <td>{{post.created}}</td>
+                  <td>{{post.description}}</td>
+
                 </tr>
               {% endfor %}
           </tbody>

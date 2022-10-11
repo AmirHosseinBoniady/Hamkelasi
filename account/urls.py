@@ -1,11 +1,12 @@
 from django.contrib.auth import views
 from django.urls import path
-from.views import ArticleList
+from.views import ArticleList, register_request
 
 app_name = 'account'
 urlpatterns = [
     path("login/", views.LoginView.as_view(), name="login"),
     path("logout/", views.LogoutView.as_view(), name="logout"),
+    
     # path(
     #     "password_change/", views.PasswordChangeView.as_view(), name="password_change"
     # ),
@@ -33,5 +34,6 @@ urlpatterns = [
 ]
  
 urlpatterns += [
-    path('', ArticleList.as_view(), name="home")
+    path('', ArticleList.as_view(), name="home"),
+    path("register", register_request, name="register")
 ]

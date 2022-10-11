@@ -5,6 +5,7 @@ from tabnanny import verbose
 from django.db import models
 from django.utils import timezone
 from django.utils.html import format_html
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -26,6 +27,7 @@ class Article(models.Model):
         ('d', 'اسپم'),
         ('p', 'منتشرشده'),
     )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=20, verbose_name = "عنوان")
     slug = models.SlugField(max_length=200, unique=True)
     description = models.TextField()
