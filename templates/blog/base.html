@@ -61,6 +61,8 @@
         </div>
       </div>
     </form>
+    
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav mr-auto-navbav">
@@ -173,7 +175,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active"><a href="./logout">خروج</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -183,29 +185,9 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="card-body table-responsive p-0">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>کاربر</th>
-              <th>وضعیت انتشار</th>
-              <th>تاریخ ایجاد</th>
-              <th>توضیحات</th>
-            </tr>
-          </thead>
-          <tbody>
-              {% for post in object_list %}
-                <tr>
-                  <td>{{post.user}}</td>
-                  <td>{{post.status}}</td>
-                  <td>{{post.created}}</td>
-                  <td>{{post.description}}</td>
+      {% block main%}
 
-                </tr>
-              {% endfor %}
-          </tbody>
-        </table>
-      </div>
+      {% endblock %}
     </section>
     <!-- /.content -->
   </div>

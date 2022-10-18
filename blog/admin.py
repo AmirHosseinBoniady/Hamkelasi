@@ -1,10 +1,12 @@
 from django.contrib import admin
+from django.contrib.auth import get_user_model
 from django.contrib import messages
 from .models import Article, Category
 from django.utils.translation import ngettext
 
 # Register your models here.
-
+User = get_user_model()
+admin.site.register(User)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('position', 'title', 'slug', 'status')
     #list_filter = (['status'],)

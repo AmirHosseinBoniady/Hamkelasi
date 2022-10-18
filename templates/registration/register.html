@@ -44,13 +44,26 @@
 					</span>
 					{% csrf_token %}
 					{% comment %} {{ register_form }}     {% endcomment %}
-					<div class="wrap-input100 validate-input input100" data-validate = "Valid email is: a@b.c">
+					<div class="wrap-input100 validate-input input100" >
+						{{ register_form.first_name }} 
+						<span class="focus-input100 input100" data-placeholder="نام "></span>
+					</div>
+					<div class="wrap-input100 validate-input input100" >
+						{{ register_form.last_name }} 
+						<span class="focus-input100 input100" data-placeholder="نام خانوادگی"></span>
+					</div>
+					<div class="wrap-input100 validate-input input100" >
 						{{ register_form.username }} 
 						<span class="focus-input100 input100" data-placeholder="نام کاربری"></span>
 					</div>
+
 					<div class="wrap-input100 validate-input input100" data-validate = "Valid email is: a@b.c">
 						{{ register_form.email }} 
 						<span class="focus-input100 input100" data-placeholder="ایمیل"></span>
+					</div>
+					<div class="wrap-input100 validate-input input100" data-validate = "Valid email is: a@b.c">
+						{{ register_form.phone }} 
+						<span class="focus-input100 input100" data-placeholder="شماره تماس :"></span>
 					</div>
 					<div class="wrap-input100 validate-input input100" data-validate = "Valid email is: a@b.c">
 						{{ register_form.password1 }} 

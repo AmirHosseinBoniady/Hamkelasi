@@ -6,3 +6,6 @@ body {
     margin-left: initial !important;
     margin-right: auto;
   }
+  #id_username {
+    text-align: center !important;
+  }
