@@ -8,22 +8,23 @@
         <thead>
           <tr>
             <th>کاربر</th>
-            <th>تصویر</th>
-            <th>وضعیت </th>
-            <th>تاریخ </th>
+            <th>نام درس</th>
+            <th>تاریخ ایجاد </th>
             <th>توضیحات</th>
           </tr>
         </thead>
         <tbody>
             {% for post in object_list %}
-              {% comment %} {% if post.day=12%}  {% endcomment %}
+             
                   <tr>
                     <td>{{post.user}}</td>
-                    <td>{{post.thumbnail_tag}}</td>
-                    <td>{{post.status}}</td>
+                    <td>{{post.title}}</td>
                     <td>{{post.created}}</td>
-                    <td>{{post.description}}</td>              
+                    <td>{{post.description}}</td> 
+                    <td>{{post.test_int}}</td>              
+
                   </tr>
+              
             {% endfor %}
         </tbody>
       </table>

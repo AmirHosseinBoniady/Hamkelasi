@@ -34,7 +34,9 @@ urlpatterns = [
 ]
  
 urlpatterns += [
+    #path('', ArticleList.as_view(), name="home"),
     path('', ArticleList.as_view(), name="home"),
+
     path('create/', ArticleCreate.as_view(), name="create"),
 
     path("register", register_request, name="register")

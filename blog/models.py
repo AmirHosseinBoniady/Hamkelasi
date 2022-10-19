@@ -1,61 +1,33 @@
 from email.policy import default
-from enum import unique
-from random import choices
-from tabnanny import verbose
 from django.db import models
-from django.urls import reverse
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.utils import timezone
+import datetime
 from django.utils.html import format_html
 from django.contrib.auth.models import AbstractUser
 
 
-
-class Category(models.Model):
-    title = models.CharField(max_length=200, verbose_name="عنوان دسته بندی")
-    slug = models.SlugField(max_length=100, unique=True, verbose_name="ادرس دسته بندی")
-    status = models.BooleanField(default=True, verbose_name="ایانمایش داده شود؟")
-    position = models.IntegerField(verbose_name="پوزیشن")
-
-    class Meta:
-        verbose_name = "دسته بندی"
-        verbose_name_plural = " دسته بندی ها"
-        ordering = ['position']
-    
-    def __str__(self):
-        return self.title
-
 User = get_user_model()
 class Article(models.Model):
-    STATUS_CHOICES = (
-        ('d', 'اسپم'),
-        ('p', 'منتشرشده'),
-    )
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=20, verbose_name = "عنوان")
-    slug = models.SlugField(max_length=200, unique=True)
     description = models.TextField()
-    thumbnail = models.ImageField(upload_to="images")
-    category = models.ForeignKey(Category, verbose_name="دسته بندی", on_delete=models.PROTECT)
-    publish = models.DateTimeField(default=timezone.now)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
-
+    test_int = models.IntegerField()
+    created = models.DateField(default=timezone.now)
+  
     class Meta:
-        verbose_name ="مقاله"
-        verbose_name_plural = "مقالات"
+        verbose_name ="مرور"
+        verbose_name_plural = "مرورها"
 
 
     def __str__(self):
         return self.title
     
+    def time_created_in_day(self):
+        return  ( self.created.year *365 + self.created.month * 31 + self.created.day)
+
     def get_absolute_url(self):
-        return reverse("account:home")
-    
-
-    def thumbnail_tag(self):
-        return format_html("<img width=100 src='{}'>".format(self.thumbnail.url))
-
+        return ("http://127.0.0.1:8000/account")
 
