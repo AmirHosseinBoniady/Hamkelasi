@@ -107,26 +107,26 @@ class ArticleList(LoginRequiredMixin, ListView):
 
 
 
-class ArticleCreate(LoginRequiredMixin, CreateView):
-	model = Article
-	fields = ['user', 'title', 'description','created','test_int']
-	template_name = "article-create.html" 
+# class ArticleCreate(LoginRequiredMixin, CreateView):
+# 	model = Article
+# 	fields = ['user', 'title', 'description','created','test_int']
+# 	template_name = "article-create.html" 
 
 
 
-def register_request(request):
-	if request.method == "POST":
-		form = NewUserForm(request.POST)
-		if form.is_valid():
-			user = form.save()
-			login(request, user)
-			messages.success(request, "Registration successful." )
-			return redirect("account:home")
-		messages.error(request, "Unsuccessful registration. Invalid information.")
-	form = NewUserForm()
-	return render (request=request, template_name="register.html", context={"register_form":form})
+# def register_request(request):
+# 	if request.method == "POST":
+# 		form = NewUserForm(request.POST)
+# 		if form.is_valid():
+# 			user = form.save()
+# 			login(request, user)
+# 			messages.success(request, "Registration successful." )
+# 			return redirect("account:home")
+# 		messages.error(request, "Unsuccessful registration. Invalid information.")
+# 	form = NewUserForm()
+# 	return render (request=request, template_name="register.html", context={"register_form":form})
 
 
 
 
-	
+	# tesssssssssssssssssssssssssssssssssssssssssssssssssssst
