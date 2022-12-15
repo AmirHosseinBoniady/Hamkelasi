@@ -1,6 +1,5 @@
 from django.views.generic import ListView
 from django.shortcuts import render
-
 from blog.models import  Article
 
 class ArticleList(ListView):
@@ -11,10 +10,6 @@ class ArticleList(ListView):
 class Home(ListView):
     queryset = Article.objects.all()
     template_name = "blog.html"
-
-class Login(ListView):
-    queryset = Article.objects.all()
-    template_name = "login.html"    
 
 class Adminlte(ListView):
     queryset = Article.objects.all()

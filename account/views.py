@@ -16,6 +16,13 @@ import copy
 from itertools import chain
 from datetime import date, timedelta
 
+
+
+
+class Login(ListView):
+    queryset = Article.objects.all()
+    template_name = "login.html"    
+	
 class ArticleList(LoginRequiredMixin, ListView):
 	template_name = "home.html"
 
@@ -118,3 +125,8 @@ def register_request(request):
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="register.html", context={"register_form":form})
+
+
+
+
+	# tesssssssssssssssssssssssssssssssssssssssssssssssssssst
