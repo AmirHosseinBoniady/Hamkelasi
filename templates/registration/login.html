@@ -1,66 +1,63 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
 <head>
-	<title>Login V2</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{% static 'registration/login/images/icons/favicon.ico' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/bootstrap/css/bootstrap.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/fonts/iconic/css/material-design-iconic-font.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/animate/animate.css' %}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/css-hamburgers/hamburgers.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/animsition/css/animsition.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/select2/select2.min.css' %}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/daterangepicker/daterangepicker.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/css/util.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/css/main.css' %}">
-<!--===============================================================================================-->
+
+    <style>
+        body{
+            background-image:url("aks.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+           
+            
+        }
+        div{
+            width: 400px;height: 300px;
+            margin-top: 150px ; margin-left: 560px;
+            backdrop-filter: blur(5px);
+        }
+        p{
+            background-color:#f0932b;
+            font-size: xx-large ;
+            text-align: center ;
+            letter-spacing: 2px;
+            
+        }
+        input{
+            margin-left: 55px;
+            font-size:  x-large;
+            border:none;border-radius: 5px; 
+        }
+        input:focus{
+            background-color: #ffeaa7;
+        }
+        #x{
+            margin-left: 93px;
+            width: 220px;height: 40px;
+            font-size:x-large;
+            background-color:#f0932b;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+           
+        }
+        #x:hover{
+            background-color:rgb(3, 164, 3);
+        } 
+        
+        
+        
+    </style>
 </head>
+
 <body>
-	
-	<div class="limiter'">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<form method="post">{% csrf_token %}
-					{{form.as_p}}
-					<button type="submit">ورود</button>
-				</form>
-
-			</div>
-		</div>
-	</div>
-	
-
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/animsition/js/animsition.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/bootstrap/js/popper.js' %}"></script>
-	<script src="{% static 'registration/login/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/select2/select2.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/daterangepicker/moment.min.js' %}"></script>
-	<script src="{% static 'registration/login/vendor/daterangepicker/daterangepicker.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/countdowntime/countdowntime.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/js/main.js' %}"></script>
-
+    <div>
+        <p><i>Welcome</i><br>
+            <form>
+               
+                <input type="text" required placeholder="User Name"><br><br>
+                <input type="password" required placeholder="Password" > <br><br><br>
+                <input id="x" type="submit" value="Login">
+            
+            </form>
+        </p>
+    </div>
+    
 </body>
-</html>
