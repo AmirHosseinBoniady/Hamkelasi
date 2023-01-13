@@ -1,110 +1,104 @@
-{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Login V2</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{% static 'registration/login/images/icons/favicon.ico' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/bootstrap/css/bootstrap.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/fonts/iconic/css/material-design-iconic-font.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/animate/animate.css' %}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/css-hamburgers/hamburgers.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/animsition/css/animsition.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/select2/select2.min.css' %}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/daterangepicker/daterangepicker.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/css/util.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/css/main.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'registration/login/css/rtl.css' %}">
+<html>
+    <head>
+        <style>
+            body{
+            background-image:url("aks.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+           
+            
+         }   
+            div{
+            backdrop-filter: blur(5px);
+            width: 500px;height: 550px;
+            margin-top: 90px ; margin-left: 510px;
+         }
+         p{
+            text-align: center;
+            background-color: #1abc9c;
+            font-size: xx-large;
+            letter-spacing: 2px;
 
-<!--===============================================================================================-->
-</head>
-<body>
-	
-	<div class="limiter'">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<form method="POST">
-					<span class="login100-form-title p-b-26">
-						ثبت نام
-					</span>  
-					<span class="login100-form-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
-					</span>
-					{% csrf_token %}
-					{% comment %} {{ register_form }}     {% endcomment %}
-					<div class="wrap-input100 validate-input input100" >
-						{{ register_form.first_name }} 
-						<span class="focus-input100 input100" data-placeholder="نام "></span>
-					</div>
-					<div class="wrap-input100 validate-input input100" >
-						{{ register_form.last_name }} 
-						<span class="focus-input100 input100" data-placeholder="نام خانوادگی"></span>
-					</div>
-					<div class="wrap-input100 validate-input input100" >
-						{{ register_form.username }} 
-						<span class="focus-input100 input100" data-placeholder="نام کاربری"></span>
-					</div>
 
-					<div class="wrap-input100 validate-input input100" data-validate = "Valid email is: a@b.c">
-						{{ register_form.email }} 
-						<span class="focus-input100 input100" data-placeholder="ایمیل"></span>
-					</div>
-					<div class="wrap-input100 validate-input input100" data-validate = "Valid email is: a@b.c">
-						{{ register_form.phone }} 
-						<span class="focus-input100 input100" data-placeholder="شماره تماس :"></span>
-					</div>
-					<div class="wrap-input100 validate-input input100" data-validate = "Valid email is: a@b.c">
-						{{ register_form.password1 }} 
-						<span class="focus-input100 input100 input100" data-placeholder="گذرواژه"></span>
-					</div>
-					<div class="wrap-input100 validate-input input100" data-validate = "Valid email is: a@b.c">
-						{{ register_form.password2 }} 
-						<span class="focus-input100 input100" data-placeholder="تایید گذرواژه"></span>
-					</div>
- 
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="btn btn-primary" type="submit">ثبت اطلاعات</button>
-						</div>
-					</div>
-				</form>
-				<p class="text-center">اگر قبلا ثبت نام کرده اید<a href="/account/login"> وارد</a> شوید., </p>
-			</div>
-		</div>
-	</div>
-	
+         }
+         .c1{
+            margin-left: 130px;
+            font-size: larger;
+            border:none;border-radius: 5px; 
+            
+            
+            
+         }
+         .c1:focus{
+            background-color: #bbeee3;
+         }
+         select{
+            display:inline;
+            margin-left: 130px;
+            font-size: larger;
+            border: none;outline: none;
 
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/animsition/js/animsition.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/bootstrap/js/popper.js' %}"></script>
-	<script src="{% static 'registration/login/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/select2/select2.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/daterangepicker/moment.min.js' %}"></script>
-	<script src="{% static 'registration/login/vendor/daterangepicker/daterangepicker.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/vendor/countdowntime/countdowntime.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'registration/login/js/main.js' %}"></script>
+         }
+         #x{
+            background-color: rgb(255, 255, 255);
+            margin-left: 55px;
+            font-size: x-large;
+            text-decoration: none;
+            color: black; 
+            padding: 5px;border-radius: 5px;
+         }
+         #x:hover{
+            background-color:green;
+         }
+         #d1{ 
+            font-size: xx-large;
+            width: 240px;
+            margin-left: 130px;
+            cursor: pointer;
+            background-color:#1abc9c;
+            border:none;border-radius: 5px; 
+            transition: background-color 0.2s ease-in-out;   
+         
+         }  
+         #d1:hover{
+            background-color: green;
+         } 
+         
+         
+            
+       </style>
 
-</body>
+
+    </head>
+
+    <body>
+        <div>
+            <p><i>REGISTRATION</i></p>
+            
+            <form>
+                <input class="c1" required type="text" placeholder="First Name"><br><br>
+                <input class="c1" required type="text" placeholder="Last Name"><br><br>
+                <input class="c1" required type="text" placeholder="User Name"><br><br>
+                <input class="c1" required type="password" placeholder="Password"><br><br>
+                <input class="c1" required type="password" placeholder="Password Agian"><br><br> 
+                <input class="c1" required type="email" placeholder="Emial Address"><br><br>
+                <input class="c1" required type="text" placeholder="Phone Number"><br><br>
+                <select>
+                    <option>10th grade</option>
+                    <option>11th grade</option>
+                    <option>12th grade</option>
+                </select>
+                <a  id="x" href="login.html" ><i>Login</i></a><br><br><br>
+                <a href="index.html"><button id="d1" type="button"><i>REGISTER</i></button> </a> 
+                
+                
+                
+
+            </form>
+            
+            
+        </div>
+    </body>
+
 </html>
