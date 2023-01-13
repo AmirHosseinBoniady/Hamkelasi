@@ -1,42 +1,88 @@
+<head>
 
-				<form class="login100-form validate-form">
-					<span class="login100-form-title p-b-26">
-						Welcome
-					</span>
-					<span class="login100-form-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
-					</span>
+    <style>
+        body{
+            background-image:url("aks.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+           
+            
+        }
+        div{
+            width: 400px;height: 300px;
+            margin-top: 150px ; margin-left: 560px;
+            backdrop-filter: blur(5px);
+        }
+        p{
+            background-color:#6ab04c;
+            font-size: xx-large ;
+            text-align: center ;
+            letter-spacing: 2px;
+            
+        }
+        input{
+            margin-left: 55px;
+            font-size:  x-large;
+            border:none;border-radius: 5px; 
+        }
+        input:focus{
+            background-color: #b9eda1;
+        }
+        #x{
+            margin-left: 93px;
+            width: 220px;height: 40px;
+            font-size:x-large;
+            background-color:#6ab04c;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+           
+        }
+        #x:hover{
+            background-color:green;
+        } 
+        #y{
+            font-size: larger; 
+            background-color: white;
+            margin-left: 55px;
+            padding: 5px;border-radius: 5px;
+            color: black;
+            
+            
+        }
+        #y:hover{
+            background-color: green;
+        }
+        #z{
+            text-decoration: none;
+            margin-left: 30px;
+            background-color: white;
+            font-size: larger;
+            padding: 5px;border-radius: 5px;
+            color: black;
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" name="email">
-						<span class="focus-input100" data-placeholder="Email"></span>
-					</div>
+        }
+        #z:hover{
+            background-color: green;
+        }
+        
+        
+    </style>
+</head>
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="pass">
-						<span class="focus-input100" data-placeholder="Password"></span>
-					</div>
-
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Login
-							</button>
-						</div>
-					</div>
-
-					<div class="text-center p-t-115">
-						<span class="txt1">
-							Don’t have an account?
-						</span>
-
-						<a class="txt2" href="#">
-							Sign Up
-						</a>
-					</div>
-				</form>
-		
+<body>
+    <div>
+        <p><i>Welcome</i><br>
+            <form>
+               
+                <input type="email" required placeholder="Email Address"><br><br>
+                <input type="password" required placeholder="Password" > <br><br><br> 
+                <a style="text-decoration: none;"  href="register.html"><i id="y">don't have an account?</i></a> <a id="z" href="login.html"><i>Sign Up</i></a><br><br><br>
+                <input id="x" type="submit" value="Login">
+                
+            
+            </form>
+        </p>
+    </div>
+    
+</body>
